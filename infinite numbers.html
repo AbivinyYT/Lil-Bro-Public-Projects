@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>∞</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+        #numeros {
+            font-size: 24px;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #000;
+            padding: 10px;
+            width: 200px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Infinite Numbers</h1>
+    <button onclick="start()" style="text-align: center;">Click here to start</button>
+    <div id="numbers"></div>
+
+    <script>
+        let counter = 1;
+        let running = false;
+
+        function start() {
+            if (running) return;
+            running = true;
+
+            setInterval(() => {
+                const div = document.getElementById("numbers");
+                div.innerHTML += counter + "<br>";
+                counter++;
+                div.scrollTop = div.scrollHeight; // scrolls automatically
+            }, 0.5); // velocity (ms) ; You can:  speed up → change 200 to 50 (for example) ; Slow down → change 200 to 1000 (for example) or Start from another number → change let counter = 1 (for example)
+        }
+    </script>
+     <footer>
+        Made by © abiviny.mp4 in 2025
+    </footer>
+    <style>
+        html, body {
+             height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        footer {
+             position: fixed;
+             bottom: 0;
+             width: 100%;
+             background: #f1f1f1;
+             padding: 12px;
+             text-align: center;
+        }
+    </style>
+</body>
+</html>
